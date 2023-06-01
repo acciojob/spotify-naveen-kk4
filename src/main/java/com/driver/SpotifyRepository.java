@@ -128,7 +128,9 @@ public class SpotifyRepository {
         List<Playlist> playlistss = userPlaylistMap.getOrDefault(temp,new ArrayList<>());
         playlistss.add(playlist);
         userPlaylistMap.put(temp,playlistss);
-        playlistListenerMap.put(playlist,List.of(temp)) ;
+        List<User> userss = new ArrayList<>();
+        userss.add(temp);
+        playlistListenerMap.put(playlist,userss) ;
         for (Song song : songs){
             if(songTitles.contains(song.getTitle())){
                 List<Song> songss = playlistSongMap.getOrDefault(playlist,new ArrayList<>());
