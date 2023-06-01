@@ -76,7 +76,7 @@ public class SpotifyRepository {
                 break;
             }
         }
-        if(Objects.isNull(temp))throw new Exception("Album does not Exist");
+        if(Objects.isNull(temp))throw new Exception("Album does not exist");
         Song song = new Song(title,length);
         songs.add(song);
         List<Song> songss = albumSongMap.getOrDefault(temp,new ArrayList<>());
