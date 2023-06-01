@@ -68,21 +68,21 @@ public class SpotifyRepository {
 
     public Song createSong(String title, String albumName, int length) throws Exception{
         Album temp = null;
-        boolean found = false;
+
         for(Album album : albums){
             if(album.getTitle().equals(albumName)){
                 temp = album;
-                found = true;
+
                 break;
             }
         }
-        throw new Exception("Album does not Exist");
-        /*Song song = new Song(title,length);
+        if(Objects.isNull(temp))throw new Exception("Album does not Exist");
+        Song song = new Song(title,length);
         songs.add(song);
         List<Song> songss = albumSongMap.getOrDefault(temp,new ArrayList<>());
         songss.add(song);
         albumSongMap.put(temp,songss);
-        return song;*/
+        return song;
     }
 
     public Playlist createPlaylistOnLength(String mobile, String title, int length) throws Exception {
