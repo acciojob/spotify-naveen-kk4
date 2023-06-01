@@ -60,9 +60,9 @@ public class SpotifyRepository {
         if(Objects.isNull(temp))temp=this.createArtist(artistName);
         Album album = new Album(title);
         albums.add(album);
-        List<Album> albums = artistAlbumMap.getOrDefault(temp,new ArrayList<>());
-        albums.add(album);
-        artistAlbumMap.put(temp,albums);
+        List<Album> albumss = artistAlbumMap.getOrDefault(temp,new ArrayList<>());
+        albumss.add(album);
+        artistAlbumMap.put(temp,albumss);
         return album;
     }
 
